@@ -15,13 +15,13 @@
 int main(void) {
 	setbuf(stdout,NULL);
 
-	Avion  arrayAviones[TAM_AVION]={
+	/*Avion  arrayAviones[TAM_AVION]={
 			{1,10,100,1000,1,1900,0,{13,10,2022},5},
 			{2,20,102,1001,2,1901,0,{14,11,2023},4},
 			{3,30,103,1002,3,1902,0,{15,12,2024},3},
 			{4,40,104,1003,4,1903,0,{16,10,2025},2}
-	};
-
+	};*/
+	Avion arrayAviones[TAM_AVION];
 	Marca arrayMarcas[TAM_MARCA] = {
 		{1000, "Boeing"},
 		{1001, "Airbus"},
@@ -44,7 +44,7 @@ int main(void) {
 	};
 
 	int opcion;
-	int idAvion;
+	int idAvion = 1;
 	int flagA = 0;
 	int flagB = 0;
 	int flagC = 0;
@@ -58,11 +58,7 @@ int main(void) {
 
 		switch(opcion)
 		{
-		/*
-		 Modificar la opción A.Alta y
-		 D.Listar para que tenga en cuenta el Piloto.
-		Agregar la opción G. LISTAR PILOTOS
-		 */
+
 		case 1:
 			if(altaAvion(arrayAviones,TAM_AVION,arrayMarcas,TAM_MARCA, arrayViajes,TAM_VIAJE,&idAvion,arrayPilotos, TAM_PILOTO))
 
@@ -81,7 +77,7 @@ int main(void) {
 			{
 			if(avionesRegistrados(arrayAviones, TAM_AVION) != TAM_AVION)
 			{
-				//int modificarAvion(Avion aviones[], int tamAvion, Viaje viaje[], int tamViaje,Marca marca[], int tamMarca, Piloto pilotos, int tamPilotos)
+
 					if(modificarAvion(arrayAviones, TAM_AVION, arrayViajes, TAM_VIAJE,arrayMarcas, TAM_MARCA,arrayPilotos, TAM_PILOTO ))
 					{
 						printf("\nModificacion realizada con exito");
@@ -129,8 +125,7 @@ int main(void) {
 			if(avionesRegistrados(arrayAviones,TAM_AVION) != TAM_AVION)
 			{
 				if(mostrarAviones(arrayAviones,TAM_AVION,arrayViajes, TAM_VIAJE,arrayMarcas, TAM_MARCA, arrayPilotos, TAM_PILOTO)==0)
-					//int mostrarAviones(Avion aviones[], int tamAvion, Viaje viaje[] , int tamViaje, Marca marca[], int tamMarca, Piloto pilotos, int tamPilotos);
-				//if(mostrarAviones(arrayAviones,TAM_AVION,arrayViajes, TAM_VIAJE,arrayMarcas, TAM_MARCA, arrayPilotos, TAM_PILOTO)==0)
+
 				{
 					printf("ok\n");
 
@@ -173,7 +168,7 @@ int main(void) {
 				break;
 
 		case 7:
-			if(flagA == 1 && flagB == 1 && flagC == 1 && flagD == 1)
+			if(flagA == 1 && flagB == 1 && flagC == 1 && flagD == 1 && flagE == 1)
 					{
 			mostrarPilotos(arrayPilotos,TAM_PILOTO);
 					}

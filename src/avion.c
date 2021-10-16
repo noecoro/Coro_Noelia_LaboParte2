@@ -38,14 +38,7 @@ if(aviones != NULL && tam > 0)
 }
 	return acumulador;
 }
-//REDACTAR MEJOROOOOOOO
-/*  recorre y cuenta los espacios que estan vacios
-en el array de aviones. la utilizo como condicion
-de que
-*  haya datos cargados para que se puedan
-realizar algunas funciones (mostrar, baja, etc).
-Devuelve un
-*  contador.*/
+
 
 /**
  * recorre cuenta indices vacios
@@ -62,9 +55,10 @@ int buscarIndiceLibreAvion(Avion aviones[], int tam)
 		for(i = 0; i < tam; i++)
 		{
 
-			if(aviones[i].isEmpty)
+			if(aviones[i].isEmpty )
 			{
 			retorno = i;
+
 
 			break;
 			}
@@ -101,7 +95,7 @@ int altaAvion(Avion aviones[], int tamAvion, Marca marca[], int tamMarca, Viaje 
 {
 	int ok = 0;
 	int indiceLibre;
-
+	iniAviones(aviones,tamAvion);
 	printf("Id de avion: %d\n",*punteroId);// va incrementado
 		if(aviones != NULL && tamAvion > 0 && marca != NULL && tamMarca > 0 && viajes != NULL &&  tamViaje > 0 && punteroId != NULL && pilotos != NULL && tamPilotos > 0)
 		{
@@ -146,7 +140,7 @@ int altaAvion(Avion aviones[], int tamAvion, Marca marca[], int tamMarca, Viaje 
 
 //====================0
 			mostrarPilotos(pilotos, tamPilotos);
-						printf("\nIngrese IdDni de piloto: ");
+						printf("\nIngrese IdDni de piloto: \n");
 						scanf("%d", &aviones[indiceLibre].idPiloto);
 
 
@@ -191,8 +185,7 @@ int altaAvion(Avion aviones[], int tamAvion, Marca marca[], int tamMarca, Viaje 
 				fflush(stdin);
 				scanf("%d/%d/%d", &aviones[indiceLibre].fechaS.dia, &aviones[indiceLibre].fechaS.mes, &aviones[indiceLibre].fechaS.anio);
 				printf("\n");
-				//system("pause");
-				printf("\n");
+
 			}
 				aviones[indiceLibre].idAvion = *punteroId;
 				(*punteroId)++;
@@ -211,8 +204,8 @@ int modificarAvion(Avion aviones[], int tamAvion, Viaje viaje[], int tamViaje,Ma
 	int indice;
 	int matricula;
 	int opcion;
-	//int mostrarAviones(Avion aviones[], int tamAvion, Viaje viaje[] , int tamViaje, Marca marca[], int tamMarca, Piloto pilotos[], int tamPilotos);
-	mostrarAviones(aviones, tamAvion, viaje, tamViaje,marca, tamMarca,pilotos,tamPilotos);//pilotos??
+
+	mostrarAviones(aviones, tamAvion, viaje, tamViaje,marca, tamMarca,pilotos,tamPilotos);
 	printf("Ingrese matricula: ");
 	fflush(stdin);
 	scanf("%d",&matricula);
